@@ -13,9 +13,9 @@ export default () => (
   <Layout>
     <h2>게시판 리스트</h2>
     <ul>
-      <BoardLink title="Next Board 1"/>
-      <BoardLink title="Next Board 2"/>
-      <BoardLink title="Next Board 3"/>
+      <BoardLink title="NextBoard1"/>
+      <BoardLink title="NextBoard2"/>
+      <BoardLink title="NextBoard3"/>
     </ul>
   </Layout>
 )
