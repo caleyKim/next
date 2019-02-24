@@ -3,22 +3,28 @@ const next = require('next');
 
 const logger = require('morgan')
 const usersRouter = require('./routes/users')
+const commentsRouter = require('./routes/comments')
 // const boardRouter = require('./routes/board')
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({dev});
 const handle = app.getRequestHandler();
+const { sequelize } = require('./models');
 
 app.prepare()
 .then(()=>{
   const server = express();
+  sequelize.sync();
+
+
   server.use(
     logger('dev'),
     express.json(),
     express.urlencoded({extended : false})
   );
 
-  server.use('/users',usersRouter)
+  server.use('/users',usersRouter);
+  server.use('/users',commentsRouter)
   // server.use('/board/:title',boardRouter)
 
   server.get('/board/:title', (req, res) => {
