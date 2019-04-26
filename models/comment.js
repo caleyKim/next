@@ -22,3 +22,20 @@ module.exports = (sequelize, DataTypes) => {
 //defaultValue : 기본값
 //comment : 컬럼설명
 //primaryKey  : 기본키 여부( id 대채)
+  return sequelize.define('comment',{
+    
+    comment : {
+      type : DataTypes.STRING('100'),
+      allowNull : false,
+    },
+    created_at : {
+      type : DataTypes.DATE,
+      allowNull : false,
+      defaultValue : sequelize.literal('now()')
+    }
+  },{
+    timestamps : false,
+    underscored : true
+  });
+}
+

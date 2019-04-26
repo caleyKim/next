@@ -1,13 +1,12 @@
 import Layout from '../components/Layout';
 import Link from 'next/link';
 import React from 'react';
-
 import axios from 'axios'
 
 const Index = (props) => (
   <Layout>
     <p>Hello, Next JS</p>
-    <h2>
+    <h2 className="test">
       홈 화면
     </h2>
 
