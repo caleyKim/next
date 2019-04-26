@@ -2,27 +2,20 @@ const express = require('express');
 const next = require('next');
 
 const logger = require('morgan')
-const usersRouter = require('./routes/users')
-const commentsRouter = require('./routes/comments')
 // const boardRouter = require('./routes/board')
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({dev});
 const handle = app.getRequestHandler();
 const { sequelize } = require('./models');
-const logger = require('morgan');
 const passport = require('passport')
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const usersRouter = require('./routes/auth');
 const commentsRouter = require('./routes/comments');
-const { sequelize } = require('./models');
 // const passportConfig = require('./passport');
 require('./passport');
 require('dotenv').config();
-const dev = process.env.NODE_ENV !== 'production';
-const app = next({dev});
-const handle = app.getRequestHandler();
 const flash = require('connect-flash')
 
 app.prepare()

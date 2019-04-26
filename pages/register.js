@@ -3,6 +3,9 @@ import React from 'react';
 import Form from  '../components/Form'
 class Register extends React.Component {
   state = {
+    style : {
+      background : 'yellow'
+    },
     data : [
       {
         title : '아이디',
@@ -60,7 +63,7 @@ class Register extends React.Component {
   render() {
     return (
       <Layout>
-        <Form data={this.state.data}></Form>
+        <Form data={this.state.data} style={this.state.style}></Form>
       </Layout>
     )
   }
