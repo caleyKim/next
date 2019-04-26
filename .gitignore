@@ -3,6 +3,8 @@ node_modules
 ./encryption
 ./log
 .env
+./.next
+.next
 ./test
 skeleton
 package-lock.json
